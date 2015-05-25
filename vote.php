@@ -229,7 +229,7 @@
 						</tr>
 					</table>
 
-					<h3>Okonkwo's <i>agnoresis</i></h3>
+					<h3>Okonkwo's <i>anagnoresis</i></h3>
 					<p>Does Okonkwo ever realize his mistake?</p>
 					<table cellpadding="10">
 						<tr>
@@ -324,7 +324,7 @@
 						</tr>
 					</table>
 
-					<h3>Othello's <i>agnoresis</i></h3>
+					<h3>Othello's <i>anagnoresis</i></h3>
 					<p>Does Othello realize his mistake? (I'm pretty sure we won't see much variance on this answer.)</p>
 					<table cellpadding="10">
 						<tr>
