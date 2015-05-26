@@ -70,6 +70,30 @@
 	$okPerip3Percent = 100 * $okPerip3Count / $peripVoters;
 	$okPerip4Percent = 100 * $okPerip4Count / $peripVoters;
 	
+
+	$avgTragHeroImportance = round($avgTragHeroImportance, 2);
+	$avgPeripImportance = round($avgPeripImportance, 2);
+	$avgAnagImportance = round($avgAnagImportance, 2);
+	$avgSpiralImportance = round($avgSpiralImportance, 2);
+	$avgOkSocial = round($avgOkSocial, 2);
+	$avgOkStubborn = round($avgOkStubborn, 2);
+	$avgOkAgressive = round($avgOkAgressive, 2);
+	$avgOkHarsh = round($avgOkHarsh, 2);
+	$avgOkOther = round($avgOkOther, 2);
+	$okPerip1Count = round($okPerip1Count, 2);
+	$okPerip2Count = round($okPerip2Count, 2);
+	$okPerip3Count = round($okPerip3Count, 2);
+	$okPerip4Count = round($okPerip4Count, 2);
+	$avgOkAnag = round($avgOkAnag, 2);
+	$avgOkEffect = round($avgOkEffect, 2);
+	$avgOthSocial = round($avgOthSocial, 2);
+	$avgOthFlaw = round($avgOthFlaw, 2);
+	$avgOthPerip = round($avgOthPerip, 2);
+	$avgOthAnag = round($avgOthAnag, 2);
+	$avgOthEffect = round($avgOthEffect, 2);
+
+	$avgothScore = round($avgothScore, 2);
+	$avgtfaScore = round($avgtfaScore, 2);
 ?>
 <!DOCTYPE html>
 
