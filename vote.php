@@ -118,6 +118,24 @@
 			$("#backbutton").prop('disabled', true);
 		}
 	</script>
+
+	<style>
+		.distrib3 > div {
+			display: inline-block;
+  			zoom: 1;
+   			width: 33%;
+		}
+		.distrib3 > div:first-child {
+			text-align: left;
+		}
+
+		.distrib3 > div:nth-child(2) {
+			text-align: center;
+		}
+		.distrib3 > div:nth-child(3) {
+			text-align: right;
+		}
+	</style>
 </head>
 <body>
 	<h1><a href="index.html">The Tragic Voter</a></h1>
@@ -139,14 +157,14 @@
 						<td id="tragHeroImportanceOutput" class="valueOutput"></td>
 					</tr>
 					<tr>
-						<td style="text-align: left;">|</td>
-						<td style="text-align: center;">|</td>
-						<td style="text-align: right;">|</td>
+						<td colspan="3" class="distrib3">
+							<div>|</div><div>|</div><div>|</div>
+						</td>
 					</tr>
 					<tr>
-						<td>It's not really necessary</td>
-						<td>It's good to have, but not having it isn't a dealbreaker.</td>
-						<td>It's essential.</td>
+						<td style="text-align: left;">It's not really necessary</td>
+						<td style="text-align: center;">It's good to have, but not having it isn't a dealbreaker.</td>
+						<td style="text-align: right;">It's essential.</td>
 					</tr>
 				</table>
 
@@ -158,9 +176,9 @@
 						<td id="peripImportanceOutput" class="valueOutput"></td>
 					</tr>
 					<tr>
-						<td style="text-align: left;">|</td>
-						<td style="text-align: center;">|</td>
-						<td style="text-align: right;">|</td>
+						<td colspan="3" class="distrib3">
+							<div>|</div><div>|</div><div>|</div>
+						</td>
 					</tr>
 					<tr>
 						<td>It's not really necessary</td>
@@ -177,9 +195,9 @@
 						<td id="anagImportanceOutput" class="valueOutput"></td>
 					</tr>
 					<tr>
-						<td style="text-align: left;">|</td>
-						<td style="text-align: center;">|</td>
-						<td style="text-align: right;">|</td>
+						<td colspan="3" class="distrib3">
+							<div>|</div><div>|</div><div>|</div>
+						</td>
 					</tr>
 					<tr>
 						<td>It's not really necessary</td>
@@ -196,9 +214,9 @@
 						<td id="spiralImportanceOutput" class="valueOutput"></td>
 					</tr>
 					<tr>
-						<td style="text-align:   left;">|</td>
-						<td style="text-align: center;">|</td>
-						<td style="text-align:  right;">|</td>
+						<td colspan="3" class="distrib3">
+							<div>|</div><div>|</div><div>|</div>
+						</td>
 					</tr>
 					<tr>
 						<td>It's not really necessary</td>
@@ -219,14 +237,12 @@
 							<td id="tragHeroTfa1Output" class="valueOutput"></td>
 						</tr>
 						<tr>
-							<td style="text-align:   left;">|</td>
-							<td style="text-align: center;"></td>
-							<td style="text-align:  right;">|</td>
+							<td>|</td>
+							<td style="text-align: right;">|</td>
 						</tr>
 						<tr>
 							<td>No</td>
-							<td>(grey area)</td>
-							<td>Yes</td>
+							<td style="text-align: right;">Yes</td>
 						</tr>
 					</table>
 
@@ -284,9 +300,9 @@
 							<td id="tfaAnagOutput" class="valueOutput"></td>
 						</tr>
 						<tr>
-							<td style="text-align: left;">|</td>
-							<td style="text-align: center;">|</td>
-							<td style="text-align: right;">|</td>
+							<td colspan="3" class="distrib3">
+								<div>|</div><div>|</div><div>|</div>
+							</td>
 						</tr>
 						<tr>
 							<td>No: He never thinks <br> he himself is mistaken; <br> he thinks everyone <br> else in Umofia is.</td>
@@ -299,17 +315,15 @@
 					<p>Do Okonkwo's actions cause negative consequences beyond Okonkwo?</p>
 					<table cellpadding="10">
 						<tr>
-							<td colspan="3"><input type="range" name="tfaSpiral" min="0" max="100" step="1" style="width: 100%;"></td>
+							<td colspan="2"><input type="range" name="tfaSpiral" min="0" max="100" step="1" style="width: 100%;"></td>
 							<td id="tfaSpiralOutput" class="valueOutput"></td>
 						</tr>
 						<tr>
-							<td style="text-align: left;">|</td>
-							<td style="text-align: center;">|</td>
-							<td style="text-align: right;">|</td>
+							<td>|</td>
+							<td style="text-align: right">|</td>
 						</tr>
 						<tr>
 							<td>No: after he killed the <br> messenger, everyone <br> else was not convinced <br> that it was justified.</td>
-							<td>(grey area)</td>
 							<td>Yes: [TODO: FIGURE THIS OUT]</td>
 						</tr>
 					</table>
@@ -324,14 +338,12 @@
 							<td id="othTragHero1Output" class="valueOutput"></td>
 						</tr>
 						<tr>
-							<td style="text-align:   left;">|</td>
-							<td style="text-align: center;"></td>
-							<td style="text-align:  right;">|</td>
+							<td>|</td>
+							<td style="text-align: right">|</td>
 						</tr>
 						<tr>
 							<td>No</td>
-							<td>(grey area)</td>
-							<td>Yes</td>
+							<td style="text-align: right;">Yes</td>
 						</tr>
 					</table>
 					<p>Does Othello have flaw that leads to his downfall?</p>
@@ -341,14 +353,12 @@
 							<td id="othTragHero2Output" class="valueOutput"></td>
 						</tr>
 						<tr>
-							<td style="text-align:   left;">|</td>
-							<td style="text-align: center;"></td>
-							<td style="text-align:  right;">|</td>
+							<td>|</td>
+							<td style="text-align: right">|</td>
 						</tr>
 						<tr>
 							<td>No</td>
-							<td>(grey area)</td>
-							<td>Yes</td>
+							<td style="text-align: right;">Yes</td>
 						</tr>
 					</table>
 
@@ -360,14 +370,12 @@
 							<td id="othPeripOutput" class="valueOutput"></td>
 						</tr>
 						<tr>
-							<td style="text-align:   left;">|</td>
-							<td style="text-align: center;"></td>
-							<td style="text-align:  right;">|</td>
+							<td>|</td>
+							<td style="text-align: right">|</td>
 						</tr>
 						<tr>
 							<td>No</td>
-							<td>(grey area)</td>
-							<td>Yes</td>
+							<td style="text-align: right;">Yes</td>
 						</tr>
 					</table>
 
@@ -379,14 +387,12 @@
 							<td id="othAnagOutput" class="valueOutput"></td>
 						</tr>
 						<tr>
-							<td style="text-align:   left;">|</td>
-							<td style="text-align: center;"></td>
-							<td style="text-align:  right;">|</td>
+							<td>|</td>
+							<td style="text-align: right">|</td>
 						</tr>
 						<tr>
 							<td>No</td>
-							<td>(grey area)</td>
-							<td>Yes</td>
+							<td style="text-align: right;">Yes</td>
 						</tr>
 					</table>
 
@@ -398,14 +404,12 @@
 							<td id="othSpiralOutput" class="valueOutput"></td>
 						</tr>
 						<tr>
-							<td style="text-align:   left;">|</td>
-							<td style="text-align: center;"></td>
-							<td style="text-align:  right;">|</td>
+							<td>|</td>
+							<td style="text-align: right">|</td>
 						</tr>
 						<tr>
 							<td>No</td>
-							<td>(grey area)</td>
-							<td>Yes</td>
+							<td style="text-align: right;">Yes</td>
 						</tr>
 					</table>
 			</div>
