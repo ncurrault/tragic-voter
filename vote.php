@@ -247,7 +247,7 @@
 					</table>
 
 					<p>To what degree do Okonkwo's flaws contribute to his downfall?</p>
-					<!-- TODO: ensure fields always sum to 100 -->
+					
 					<table cellpadding="10">
 						<tr>
 							<td>Stubbornness</td>
@@ -306,8 +306,8 @@
 						</tr>
 						<tr>
 							<td>No: He never thinks <br> he himself is mistaken; <br> he thinks everyone <br> else in Umofia is.</td>
-							<td>Maybe: He realizes that <br> he cannot live in the new <br> Umofia, regardless of <br> who is actually right.</td>
-							<td>Yes: He commits suicide <br> because he realized the <br> heinousness of killing <br> the messenger.</td>
+							<td style="text-align: center;">Maybe: He realizes that <br> he cannot live in the new <br> Umofia, regardless of <br> who is actually right.</td>
+							<td style="text-align: right;">Yes: He commits suicide <br> because he realized the <br> heinousness of killing <br> the messenger.</td>
 						</tr>
 					</table>
 
@@ -323,8 +323,8 @@
 							<td style="text-align: right">|</td>
 						</tr>
 						<tr>
-							<td>No: after he killed the <br> messenger, everyone <br> else was not convinced <br> that it was justified.</td>
-							<td>Yes: [TODO: FIGURE THIS OUT]</td>
+							<td>No: the last remark about <br> how his story was only a <br> paragraph in a book <br> demonstrated this. </td>
+							<td style="text-align: right;">Yes: he was well-respected <br> in Umofia and his death is <br> a loss for everyone.</td>
 						</tr>
 					</table>
 
@@ -421,10 +421,15 @@
 		</div>
 		<div id="step2">
 			
-			<h1><i>Things Fall Apart</i></h2>
-			<p id="tfaScoreOut"></p>
-			<h1><i>Othello</i></h2>
-			<p id="othScoreOut"></p>
+			<h1>
+				<i>Things Fall Apart</i>:
+				<span id="tfaScoreOut"></span>
+			</h1>
+			
+			<h1>
+				<i>Othello</i>:
+				<span id="othScoreOut"></span>
+			</h1>
 			
 			<input type="hidden" name="tfaScore" id="tfaScoreSubmit">
 			<input type="hidden" name="othScore" id="othScoreSubmit">
