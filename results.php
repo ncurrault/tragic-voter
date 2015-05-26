@@ -94,6 +94,11 @@
 
 	$avgothScore = round($avgothScore, 2);
 	$avgtfaScore = round($avgtfaScore, 2);
+
+	$okPerip1Percent = round($okPerip1Percent, 2);
+	$okPerip2Percent = round($okPerip2Percent, 2);
+	$okPerip3Percent = round($okPerip3Percent, 2);
+	$okPerip4Percent = round($okPerip4Percent, 2);
 ?>
 <!DOCTYPE html>
 
