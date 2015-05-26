@@ -27,5 +27,8 @@ OthPerip INT,
 OthAnag INT,
 OthEffect INT,
 
+othScore INT,
+tfaScore INT,
+
 Weight INT DEFAULT 1
 );
