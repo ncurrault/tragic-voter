@@ -1,3 +1,9 @@
+<?php
+	
+?>
+
+<!DOCTYPE html>
+
 <html>
 <head>
 	<title>The Tragic Voter</title>
