@@ -1,5 +1,36 @@
 <?php
-	
+	require_once "sql_functions.php";
+
+	$isPost = false;
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		$voteObj = array(
+			"tragheroimportance" => $_POST["tragHeroImportance"],
+			"peripimportance" => $_POST["peripImportance"],
+			"anagimportance" => $_POST["anagImportance"],
+			"spiralimportance" => $_POST["spiralImportance"],
+			"oksocial" => $_POST["tragHeroTfa1"],
+			"okstubborn" => $_POST["stubbornDownfall"],
+			"okagressive" => $_POST["aggressionDownfall"],
+			"okharsh" => $_POST["harshnessDownfall"],
+			"okother" => $_POST["otherDownfall"],
+			"okperip1count" => $_POST["tfaPeri"] == "peripReject" ? 1 : 0,
+			"okperip2count" => $_POST["tfaPeri"] == "peripExecute" ? 1 : 0,
+			"okperip3count" => $_POST["tfaPeri"] == "peripKilling" ? 1 : 0,
+			"okperip4count" => $_POST["tfaPeri"] == "peripNoChoice" ? 1 : 0,
+			"okanag" => $_POST["tfaAnag"],
+			"okeffect" => $_POST["tfaSpiral"],
+			"othsocial" => $_POST["othTragHero1"],
+			"othflaw" => $_POST["othTragHero2"],
+			"othperip" => $_POST["othPerip"],
+			"othanag" => $_POST["othAnag"],
+			"otheffect" => $_POST["othSpiral"],
+			"othScore" => $_POST["tfaScore"],
+			"tfaScore" => $_POST["othScore"]
+		);
+
+		sqlAddRow("Votes", $voteObj);
+		$isPost = true;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -67,16 +98,24 @@
 
 			$("#tfaScoreOut").html(tfaScore + "%");
 			$("#othScoreOut").html(othScore + "%");
+
+			$("#tfaScoreSubmit").val(tfaScore);
+			$("#othScoreSubmit").val(othScore);			
 		}
 
 		function step1to2() {
-			$("#step1 input, #calcScoresButton").prop('disabled', true);
+			$("#step1 input").prop('readonly', true);
+			$("#calcScoresButton").prop('disabled', true);
 			calculateScores();
-			$("#step2 input, #backbutton").prop('disabled', false);
+			$("input[type=submit]").prop('disabled', false);
+			$("#backbutton").prop('disabled', false);
 		}
 		function step2to1() {
-			$("#step2 input, #backbutton").prop('disabled', true);
-			$("#step1 input, #calcScoresButton").prop('disabled', false);
+			$("#step1 input").prop('readonly', false);
+			$("#calcScoresButton").prop('disabled', false);
+			
+			$("input [type=submit]").prop('disabled', true);
+			$("#backbutton").prop('disabled', true);
 		}
 	</script>
 </head>
@@ -84,12 +123,14 @@
 	<h1>The Tragic Voter</h1>
 	<h2>Give your input.</h2>
 
+	<div id="successMsg" <?php if (!$isPost) echo "hidden";?>>Your results have been submitted!</div>
+
 	<hr>
 	<form method="POST">
 		<div id="step1">
 			<div id="componentImportance">
 				<h1>Components of Tragedy</h1>
-				How important do you think each component is?  <a href="https://pcds.instructure.com/courses/484/files/8690/download?wrap=1">Source</a>.
+				How important do you think each component is?
 				<h2>Tragic Hero</h2>
 				<p>A tragic hero is someone of great social importance who has admirable traits, which eventually cause his downfall.</p>
 				<table cellpadding="10">
@@ -381,6 +422,8 @@
 			<h1><i>Othello</i></h2>
 			<p id="othScoreOut"></p>
 			
+			<input type="hidden" name="tfaScore" id="tfaScoreSubmit">
+			<input type="hidden" name="othScore" id="othScoreSubmit">
 			<input disabled type="submit" value="Submit these results!">
 		</div>
 
