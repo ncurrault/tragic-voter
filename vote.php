@@ -120,7 +120,7 @@
 	</script>
 </head>
 <body>
-	<h1>The Tragic Voter</h1>
+	<h1><a href="index.html">The Tragic Voter</a></h1>
 	<h2>Give your input.</h2>
 
 	<div id="successMsg" <?php if (!$isPost) echo "hidden";?>>Your results have been submitted!</div>
