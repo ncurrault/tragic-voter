@@ -35,4 +35,26 @@ function sqlQuery($q, $params=null)
 	return $ret;
 }
 
+function sqlAddRow($table, $a) {
+	$qPt1 = "INSERT INTO $table (";
+	$qPt2 = "VALUES (";
+
+	$queryParams = array( );
+	$i=1;
+
+	foreach ($a as $key => $val) {
+		$qPt1 .= $key . ", ";
+		$qPt2 .= '$' . $i . ", ";
+
+		array_push($queryParams, $val);
+		$i++;
+	}
+
+	$qPt1=substr($qPt1, 0, strlen($qPt1)-2) . ") ";
+	$qPt2=substr($qPt2, 0, strlen($qPt2)-2) . ");";
+
+	$q = $qPt1 . $qPt2;
+
+	return sqlQuery($q, $queryParams);
+}
 ?>
