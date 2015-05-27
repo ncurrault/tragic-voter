@@ -108,6 +108,7 @@
 
 			$("#calcScoresButton").fadeOut({complete: function() {
 				$("#backbutton").fadeIn();
+				$("#submitButton").fadeIn();
 			}});
 			calculateScores();
 
@@ -122,7 +123,23 @@
 
 			
 			$("#results").css("opacity", 0);
+			$("#submitButton").fadeOut();
 		}
+
+		$(document).scroll(function ()
+		{
+			var winHeight = $(window).height();
+			var scrollPos = $(document).scrollTop();
+			
+			if (scrollPos < winHeight)
+			{
+				$("#backToTop").css({"opacity": scrollPos/winHeight })
+			}
+			else
+			{
+				$("#backToTop").css({"opacity": 1 })
+			}
+		});
 	</script>
 
 	<!-- Bootstrap -->
@@ -161,10 +178,12 @@
 		.rt-al {
 			text-align: right;
 		}
-		#upperRightButtons {
+		#backToTop {
 			position: fixed;
 			right: 10px;
 			top: 10px;
+
+			opacity: 0;
 		}
 
 		#successMsg {
@@ -187,10 +206,7 @@
 		<h3 id="successMsg" <?php if (!$isPost) echo "hidden";?>>Your results have been submitted!</h3>
 	</div>
 
-	<div id="upperRightButtons">
-		<a href="#resultContainter" class="btn btn-warning" id="calcScoresButton" onclick="inputToResults(); return true;">Calculate Scores</a>
-		<a href="#"      class="btn btn-danger"  id="backbutton"       onclick="resultsBackToInput();" style="display: none;">Go Back</a>
-	</div>
+	<a href="#" class="btn btn-danger col-sm-2" id="backToTop">Return to Top</a>
 
 	<form method="POST">
 		<div id="dataInput">
@@ -481,7 +497,13 @@
 		</div>
 		
 		<div id="resultContainter">
-			<h1>Results</h1>
+			<div class="row">
+				<h1 class="col-sm-3">Scores</h1>
+				<button class="btn btn-info col-sm-7    col-sm-offset-1"    id="calcScoresButton"                    type="button" onclick="inputToResults();">Calculate Scores</button>
+				<button class="btn btn-warning col-sm-3 col-sm-offset-1" id="backbutton"   style="display: none;" type="button" onclick="resultsBackToInput();">Modify Answers</button>
+				<input  class="btn btn-success col-sm-3 col-sm-offset-1" id="submitButton" style="display: none;" type="submit" value="Submit these results!">
+			</div>
+
 			<div id="results" style="opacity: 0;">
 				<h3>
 					<i>Things Fall Apart</i>:
@@ -495,7 +517,6 @@
 				
 				<input type="hidden" name="tfaScore" id="tfaScoreSubmit">
 				<input type="hidden" name="othScore" id="othScoreSubmit">
-				<input type="submit" class="btn btn-success" value="Submit these results!">
 			</div>
 
 		</div>
