@@ -153,12 +153,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 	<style>
-		html, body {
-			height: 100%;
-		}
-		#resultContainter {
-			min-height: 100%;
-		}
 		.distrib3 > div {
 			display: inline-block;
   			zoom: 1;
