@@ -105,119 +105,334 @@
 <html>
 <head>
 	<title>The Tragic Voter</title>
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<style>
+		.rt-al {
+			text-align: right;
+		}
+	</style>
 </head>
-<body>
-	<h1><a href="index.html">The Tragic Voter</a></h1>
-	<h2>View the Results.</h2>
+<body class="container-fluid">
+	<div id="intro" class="jumbotron">
+		<h1><a href="index.html">The Tragic Voter</a></h1>
+		<h2>View the results.</h2>
+	</div>
+	
+	<h2>Importance of each Component</h2>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Tragic Hero
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-info " role="progressbar" aria-valuenow="<?php echo $avgTragHeroImportance; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgTragHeroImportance; ?>%">
+					<?php echo $avgTragHeroImportance; ?> / 100
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Hero's choice and <i>Peripetea</i>
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $avgPeripImportance; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgPeripImportance; ?>%">
+					<?php echo $avgPeripImportance; ?> / 100
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			<i>Anagnoresis</i>
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-info " role="progressbar" aria-valuenow="<?php echo $avgAnagImportance; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgAnagImportance; ?>%">
+					<?php echo $avgAnagImportance; ?> / 100
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Affecting innocent people
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $avgSpiralImportance; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgSpiralImportance; ?>%">
+					<?php echo $avgSpiralImportance; ?> / 100
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<hr>
-	<h2>Importance of each Component</h2>
-	<table>
-		<tr>
-			<td>Tragic Hero</td>
-			<td><?php echo $avgTragHeroImportance; ?> / 100</td>
-		</tr>
-		<tr>
-			<td>Hero's choice and <i>Peripetea</i></td>
-			<td><?php echo $avgPeripImportance; ?> / 100</td>
-		</tr>
-		<tr>
-			<td><i>Anagnoresis</i></td>
-			<td><?php echo $avgAnagImportance; ?> / 100</td>
-		</tr>
-		<tr>
-			<td>Affecting innocent people</td>
-			<td><?php echo $avgSpiralImportance; ?> / 100</td>
-		</tr>
-	</table>
+
 	<h2><b><i>Things Fall Apart</i> Analysis</b></h2>
 	<h3>Factors in Okonkwo's downfall</h3>
-	<table>	
-		<table>
-		<tr>
-			<td>Stubbornness</td>
-			<td><?php echo $avgOkStubborn; ?>%</td>
-		</tr>
-		<tr>
-			<td>Aggression</td>
-			<td><?php echo $avgOkAgressive; ?>%</td>
-		</tr>
-		<tr>
-			<td>Harshness</td>
-			<td><?php echo $avgOkHarsh; ?>%</td>
-		</tr>
-		<tr>
-			<td>Other (not his flaws)</td>
-			<td><?php echo $avgOkOther; ?>%</td>
-		</tr>
-	</table>
-	<h3>Okonkwo's Choice that leads to his downfall</h3>
-	<table cellpadding="2">
-		<tr>
-			<td>Rejecting Nwoye's conversion to Christianity</td>
-			<td><?php echo $okPerip1Count . " out of " . $peripVoters . " voters"?></td>
-			<td>(<?php echo $okPerip1Percent ?>%)</td>
-		</tr>
-		<tr>
-			<td>Executing Ikemefuna</td>
-			<td><?php echo $okPerip2Count . " out of " . $peripVoters . " voters"?></td>
-			<td>(<?php echo $okPerip2Percent ?>%)</td>
-		</tr>
-		<tr>
-			<td>Killing the messenger</td>
-			<td><?php echo $okPerip3Count . " out of " . $peripVoters . " voters"?></td>
-			<td>(<?php echo $okPerip3Percent ?>%)</td>
-		</tr>
-		<tr>
-			<td>there is no such choice</td>
-			<td><?php echo $okPerip4Count . " out of " . $peripVoters . " voters"?></td>
-			<td>(<?php echo $okPerip4Percent ?>%)</td>
-		</tr>
-	</table>
-	<h3>Other Aspects</h3>
-	<table>
-		<tr>
-			<td>Does Okonkwo have a high social status?</td>
-			<td><?php echo $avgOkSocial; ?>% yes</td>
-		</tr>
-		<tr>
-			<td>Does Okonkwo have an anagnoresis?</td>
-			<td><?php echo $avgOkAnag; ?>% yes</td>
-		</tr>
-		<tr>
-			<td>Does Okonkwo's downfall effect innocent people?</td>
-			<td><?php echo $avgOkEffect; ?>% yes</td>
-		</tr> 
-	</table>
-	<h2><i>Othello</i> Analysis</h2>
-	<table>
-		<tr>
-			<td>Does Othello have a high social status?</td>
-			<td><?php echo $avgOthSocial; ?>% yes</td>
-		</tr>
-		<tr>
-			<td>Does Othello have a flaw that causes his downfall?</td>
-			<td><?php echo $avgOthFlaw; ?>% yes</td>
-		</tr>
-		<tr>
-			<td>Does Othello make a choice that causes his downfall?</td>
-			<td><?php echo $avgOthPerip; ?>% yes</td>
-		</tr>
-		<tr>
-			<td>Does Othello have an <i>anagnoresis</i>?</td>
-			<td><?php echo $avgOthAnag; ?>% yes</td>
-		</tr>
-		<tr>
-			<td>Does Othello's downfall affect innocent people?</td>
-			<td><?php echo $avgOthEffect; ?>% yes</td>
-		</tr>
-	</table> 
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Stubbornness
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?php echo $avgOkStubborn; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOkStubborn; ?>%">
+					<?php echo $avgOkStubborn; ?>%
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Aggression
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $avgOkAgressive; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOkAgressive; ?>%">
+					<?php echo $avgOkAgressive; ?>%
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Harshness
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?php echo $avgOkHarsh; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOkHarsh; ?>%">
+					<?php echo $avgOkHarsh; ?>%
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Other (not his flaws)
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $avgOkOther; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOkOther; ?>%">
+					<?php echo $avgOkOther; ?>%
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<h2>Final Results</h2>
-	<h3><i>Othello</i> is <?php echo $avgothScore; ?>% a tragedy</h3>
-	and
-	<h3><i>Things Fall Apart</i> is <?php echo $avgtfaScore; ?>% a tragedy</h3>
-	based on
-	<h3><?php echo $elapsedWeight ?> submissions </h3>
+	<h3>Okonkwo's Choice that leads to his downfall</h3>
+	
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Rejecting Nwoye's conversion to Christianity
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?php echo $okPerip1Percent; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 5em; width: <?php echo $okPerip1Percent; ?>%">
+					<?php echo $okPerip1Count . " / " . $peripVoters ?> (<?php echo $okPerip1Percent; ?>%)
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Executing Ikemefuna
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $okPerip2Percent; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 5em; width: <?php echo $okPerip2Percent; ?>%">
+					<?php echo $okPerip2Count . " / " . $peripVoters ?> (<?php echo $okPerip2Percent; ?>%)
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Killing the messenger
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?php echo $okPerip3Percent; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 5em; width: <?php echo $okPerip3Percent; ?>%">
+					<?php echo $okPerip3Count . " / " . $peripVoters ?> (<?php echo $okPerip3Percent; ?>%)
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			There is no such choice.
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $okPerip4Percent; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 5em; width: <?php echo $okPerip4Percent; ?>%">
+					<?php echo $okPerip4Count . " / " . $peripVoters ?> (<?php echo $okPerip4Percent; ?>%)
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h3>Other Aspects</h3>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Does Okonkwo have a high social status?
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?php echo $avgOkSocial; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOkSocial; ?>%">
+					<?php echo $avgOkSocial; ?>% yes
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Does Okonkwo have an anagnoresis?
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $avgOkAnag; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOkAnag; ?>%">
+					<?php echo $avgOkAnag; ?>% yes
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Does Okonkwo's downfall effect innocent people?
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?php echo $avgOkEffect; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOkEffect; ?>%">
+					<?php echo $avgOkEffect; ?>% yes
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<hr>
+
+	<h2><i>Othello</i> Analysis</h2>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Does Othello have a high social status?
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo $avgOthSocial; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOthSocial; ?>%">
+					<?php echo $avgOthSocial; ?>% yes
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Does Othello have a flaw that causes his downfall?
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $avgOthFlaw; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOthFlaw; ?>%">
+					<?php echo $avgOthFlaw; ?>% yes
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Does Othello make a choice that causes his downfall?
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo $avgOthPerip; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOthPerip; ?>%">
+					<?php echo $avgOthPerip; ?>% yes
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Does Othello have an <i>anagnoresis</i>?
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $avgOthAnag; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOthAnag; ?>%">
+					<?php echo $avgOthAnag; ?>% yes
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-5 col-xs-6 rt-al">
+			Does Othello's downfall affect innocent people?
+		</div>
+		<div class="col-md-9 col-sm-7 col-xs-6">
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo $avgOthEffect; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgOthEffect; ?>%">
+					<?php echo $avgOthEffect; ?>% yes
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="jumbotron">
+		<h1>Final Results</h1>
+
+		<h2><i>Othello</i> is <?php echo $avgothScore; ?>% a tragedy</h2>
+		<div class="row col-xs-12">
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $avgothScore; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgothScore; ?>%">
+					<?php echo $avgothScore; ?>%
+				</div>
+			</div>
+		</div>
+
+		<h2><i>Things Fall Apart</i> is <?php echo $avgtfaScore; ?>% a tragedy</h2>
+		<div class="row col-xs-12">
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $avgtfaScore; ?>"
+					aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $avgtfaScore; ?>%">
+					<?php echo $avgtfaScore; ?>%
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<h3>Based on <?php echo $elapsedWeight ?> submissions.</h3>
+
 </body>
 </html>
